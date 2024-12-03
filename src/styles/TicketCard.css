@@ -1,0 +1,176 @@
+/* Ticket card styling */
+.ticket {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.ticket:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ticket h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Ticket information container */
+.ticket-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Ticket information sections */
+.ticket-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    /* For responsiveness */
+}
+
+.ticket-section .label {
+    font-weight: bold;
+    color: #555;
+    margin-right: 4px;
+}
+
+.status,
+.priority,
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Icons for status and priority */
+.status-icon,
+.priority-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    /* Space between icon and text */
+    vertical-align: middle;
+}
+
+/* Priority styles */
+.priority {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.priority.urgent {
+    color: #e74c3c;
+    /* Red for urgent */
+}
+
+.priority.high {
+    color: #f39c12;
+    /* Orange for high */
+}
+
+.priority.medium {
+    color: #3498db;
+    /* Blue for medium */
+}
+
+.priority.low {
+    color: #2ecc71;
+    /* Green for low */
+}
+
+.priority.no-priority {
+    color: #95a5a6;
+    /* Gray for no priority */
+}
+
+/* User avatar styles */
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    /* Circular avatar */
+    border: 1px solid #ddd;
+    object-fit: cover;
+    /* Ensure the avatar looks good */
+}
+
+.assigned-user-name {
+    font-weight: 500;
+    color: #444;
+}
+
+/* Hover effects */
+.priority:hover,
+.status:hover,
+.assigned-user-name:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .ticket {
+        padding: 12px;
+    }
+
+    .ticket h3 {
+        font-size: 1rem;
+    }
+
+    .ticket-info {
+        gap: 8px;
+    }
+
+    .ticket-section {
+        flex-direction: column;
+        /* Stack elements for smaller screens */
+        align-items: flex-start;
+    }
+
+    .status-icon,
+    .priority-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .user-avatar {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ticket {
+        padding: 10px;
+        margin-bottom: 16px;
+    }
+
+    .ticket h3 {
+        font-size: 0.9rem;
+    }
+
+    .ticket-section {
+        gap: 6px;
+    }
+
+    .status-icon,
+    .priority-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .user-avatar {
+        width: 24px;
+        height: 24px;
+    }
+}
